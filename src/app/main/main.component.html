@@ -1,0 +1,79 @@
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<table class="table table-hover table-responsive table-condensed" style="width:90%">
+		<thead>
+			<tr>
+			   <th>Attribute Number</th>
+			   <th>Attribute Name</th>
+			   <th>Description</th>
+				<th>Value</th>
+				<th>Type</th>
+				<th>Size</th>
+				<th>Customer Facing</th>
+				<th>Edit/Delete</th>	
+			</tr>
+			
+		</thead>
+		<tbody *ngFor="let data of attr.data">
+			<tr>
+			<td>{{data.Attr_Number}}</td>
+			<td>{{data.Attr_Name}}</td>
+			<td>{{data.Attr_Discr}}</td>
+			<td>{{data.Attr_Value}}</td>
+			<td>{{data.Attr_Type}}</td>
+			<td>{{data.Attr_Size}}</td>
+			<td>{{data.Attr_Customer_Face}}</td>
+			<td></td>
+			<tr>
+		</tbody>
+	</table>
+		</div>
+	</div>
+	
+</div> -->
+
+  <!-- <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter"> -->
+  <table mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Attr_Number">
+    <th mat-header-cell *matHeaderCellDef style="padding-right:7px"> Attribute Number</th>
+    <td mat-cell *matCellDef="let element"> {{element.Attr_Number}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Attr_Name">
+    <th mat-header-cell *matHeaderCellDef> Attribute Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.Attr_Name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Attr_Discr">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.Attr_Discr}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Attr_Value">
+    <th mat-header-cell *matHeaderCellDef style="padding-left: 7px"> Value </th>
+    <td mat-cell *matCellDef="let element" style="padding-left:7px"> {{element.Attr_Value}} </td>
+  </ng-container>
+ 	
+  <ng-container matColumnDef="Attr_Type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.Attr_Type}} </td>
+  </ng-container>
+
+<ng-container matColumnDef="Attr_Size">
+    <th mat-header-cell *matHeaderCellDef> Size </th>
+    <td mat-cell *matCellDef="let element"> {{element.Attr_Size}} </td>
+  </ng-container>
+ 
+ <ng-container matColumnDef="Attr_Customer_Face">
+    <th mat-header-cell *matHeaderCellDef> Customer Facing </th>
+    <td mat-cell *matCellDef="let element"> {{element.Attr_Customer_Face}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+ 
+</table>
